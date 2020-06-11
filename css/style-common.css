@@ -1,0 +1,55 @@
+.puzzle {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.piece {
+  cursor: pointer;
+  width: auto;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+}
+
+.ex-piece {
+  cursor: pointer;
+  width: auto;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: auto;
+  height: 60px;
+  position: absolute;
+  z-index: 0;
+
+  -khtml-user-drag: element;
+}
+
+.ex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: auto;
+  height: 60px;
+  position: absolute;
+  z-index: 0;
+
+  -khtml-user-drag: element;
+}
+
+#pieces-area {
+  width: 700px; 
+  height: 80px; 
+  margin: 20px; 
+  background-color: #FF9966; 
+  border: 1px solid #cc3333;
+}
