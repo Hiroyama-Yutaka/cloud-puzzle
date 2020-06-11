@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style-common.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+    <h1>
+      Security Services Puzzle
+    </h1>
+    <p>Drag & Drop pieces on map. After that, push 'submit' button.</p>
+
+    <div class="puzzle" id="puzzle">
+      <h2>
+        Security Services Pieces
+      </h2>
+
+      <div id="pieces-area">
+        <img src="../images/AWS/aws-waf.png" class="piece" id="aws-waf">
+        <img src="../images/AWS/fw-manager.png" class="piece" id="fw-manager">
+        <img src="../images/AWS/guardduty.png" class="piece" id="guardduty">
+        <img src="../images/AWS/inspector.png" class="piece" id="inspector">
+        <img src="../images/AWS/macie.png" class="piece" id="macie">
+        <img src="../images/AWS/security-hub.png" class="piece" id="security-hub">
+        <img src="../images/AWS/shield.png" class="piece" id="shield">
+      </div>
+
+      <h2>
+        Security Services Map
+      </h2>
+
+      <img src="../images/AWS/Background00.png" id="puzzle-bg">
+
+      <img src="../images/Box.svg" class="box" id="box-waf">
+
+      <img src="../images/Box.svg" class="ex-box" id="box-alb">
+      <p id="txt-ex">ex)</p>
+      <img src="../images/AWS/aws-waf.png" class="ex-piece" id="piece-ex">
+
+      <img src="../images/Box.svg" class="box" id="box-ec2">
+
+      <img src="../images/Box.svg" class="box" id="box-s3">
+
+      <img src="../images/Box.svg" class="box" id="box-else1">
+
+      <img src="../images/Box.svg" class="box" id="box-else2">
+
+      <img src="../images/Box.svg" class="box" id="box-else3">
+
+      <img src="../images/Box.svg" class="box" id="box-else4">
+    </div>
+
+    <input type="button" value="Submmit" onclick="onButtonClick();"/><br />
+    <br />
+    <div id="output"></div>
+
+    <a href="../index.html">Top</a>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.ui.touch-punch.min.js"></script>
+    <script src="../scripts/puzzle-common.js"></script>
+
+    <script>
+      $(function() {
+        $('.piece').draggable({
+          containment:".puzzle"
+        });
+        $('.box').droppable({
+          accept:'.piece', 
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      function onButtonClick() {
+        const map = new Map([
+          ["aws-waf",      ["box-waf"]], 
+          ["inspector",    ["box-ec2"]],
+          ["macie",        ["box-s3"]], 
+          ["fw-manager",   ["box-else1", "box-else2", "box-else3", "box-else4"]], 
+          ["guardduty",    ["box-else1", "box-else2", "box-else3", "box-else4"]], 
+          ["security-hub", ["box-else1", "box-else2", "box-else3", "box-else4"]], 
+          ["shield",       ["box-else1", "box-else2", "box-else3", "box-else4"]], 
+        ]);
+
+        const result = judgeAllPieces(map);
+
+        target = document.getElementById("output");
+        if (result) {
+          target.innerHTML = '<p>Congratulations :)</p><img src="../images/dog_sampo.png">';
+        }
+        else {
+          target.innerHTML = '<p>Never give up :(</p><img src="../images/dog.png">';
+        }
+      }
+    </script>
+  </body>
+</html>

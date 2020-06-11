@@ -1,0 +1,106 @@
+#puzzle-bg {
+  width: auto;
+  height: 500px;
+}
+
+#box-waf {
+  position: absolute;
+  top: 240px;
+  left: 680px;
+}
+
+#piece-ex {
+  position: absolute;
+  top: 425px;
+  left: 85px;
+}
+
+#txt-ex {
+  position: absolute;
+  top: 385px;
+  left: 120px;
+}
+
+#box-alb {
+  position: absolute;
+  top: 415px;
+  left: 75px;
+}
+
+#box-ec2 {
+  position: absolute;
+  top: 420px;
+  left: 355px;
+}
+
+#box-s3 {
+  position: absolute;
+  top: 515px;
+  left: 605px;
+}
+
+#box-else1 {
+  position: absolute;
+  top: 610px;
+  left: 120px;
+}
+
+#box-else2 {
+  position: absolute;
+  top: 610px;
+  left: 270px;
+}
+
+#box-else3 {
+  position: absolute;
+  top: 610px;
+  left: 420px;
+}
+
+#box-else4 {
+  position: absolute;
+  top: 610px;
+  left: 570px;
+}
+
+#aws-waf {
+  position: absolute;
+  top: 70px;
+  left: 40px;
+}
+
+#fw-manager {
+  position: absolute;
+  top: 70px;
+  left: 140px;
+}
+
+#guardduty {
+  position: absolute;
+  top: 70px;
+  left: 240px;
+}
+
+#inspector {
+  position: absolute;
+  top: 70px;
+  left: 340px;
+}
+
+#macie {
+  position: absolute;
+  top: 70px;
+  left: 440px;
+}
+
+#security-hub {
+  position: absolute;
+  top: 70px;
+  left: 540px;
+}
+
+#shield {
+  position: absolute;
+  top: 70px;
+  left: 640px;
+}
